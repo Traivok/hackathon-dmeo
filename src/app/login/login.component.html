@@ -1,0 +1,29 @@
+<form [formGroup]="loginForm" (ngSubmit)="submit()">
+    <h1>SkillMatch</h1>
+    <mat-form-field appearance="outline">
+        <input matInput placeholder="Nome" formControlName="name">
+        <mat-error *ngIf="loginForm.get('name')?.invalid">
+            Por favor, insira seu nome.
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="loginForm.get('email')?.invalid">
+            Por favor, insira um email válido.
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-radio-group formControlName="userType">
+        <mat-radio-button value="manager">Gestor</mat-radio-button>
+        <mat-radio-button value="collaborator">Colaborador</mat-radio-button>
+    </mat-radio-group>
+    <mat-error *ngIf="loginForm.get('userType')?.invalid && loginForm.get('userType')?.touched">
+        Por favor, selecione algum.
+    </mat-error>
+    <br>
+    <button mat-raised-button
+            color="primary"
+            type="submit">Entrar
+    </button>
+</form>

@@ -1,0 +1,53 @@
+<section class="container">
+    <mat-card class="company-info mat-elevation-z24">
+        <mat-card-header>
+            <div mat-card-avatar [ngStyle]="toStyle(service.company.icon)"></div>
+            <mat-card-title>
+                <h1>{{service.company.name}}</h1>
+            </mat-card-title>
+            <mat-card-subtitle>{{service.company.description}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="flex-container">
+            <div class="info">
+                <table>
+                    <tr>
+                        <td><strong>Localização:</strong></td>
+                        <td>{{ service.company.location }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tamanho da equipe:</strong></td>
+                        <td>{{ service.company.collaborators.length }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Gestor:</strong></td>
+                        <td>{{ service.company.manager.name }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>E-mail do Gestor:</strong></td>
+                        <td>{{ service.company.manager.email }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Média da Equipe:</strong></td>
+                        <td>{{ kpi.avgGrade | number: '1.2-2' }}</td>
+                    </tr>
+                </table>
+            </div>
+            <section class="kpi">
+                <canvas baseChart
+                        [datasets]="radarChartDatasets"
+                        [options]="radarChartOptions"
+                        [labels]="radarChartLabels"
+                        [type]="'radar'">
+                </canvas>
+            </section>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            <button mat-icon-button
+                    color="accent"
+                    matTooltip="detalhes"
+                    [routerLink]="'../members'">
+                <mat-icon>search</mat-icon>
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</section>

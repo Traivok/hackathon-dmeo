@@ -1,0 +1,19 @@
+mat-toolbar {
+  display: flex;
+  justify-content: center;
+}
+
+.toolbar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.centered-span {
+  margin: 0 auto;
+}
+
+.header-gap {
+  height: 5px;
+}
