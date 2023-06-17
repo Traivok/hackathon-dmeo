@@ -17,14 +17,19 @@ import {MatCardModule} from "@angular/material/card";
 import {MatListModule} from "@angular/material/list";
 import {NgChartsModule} from "ng2-charts";
 import {MatIconModule} from "@angular/material/icon";
+import { FilterPipe } from './filter.pipe';
+import { MemberKpiListComponent } from './manager/member-kpi/member-kpi-list.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    TeamKPIComponent,
-    MemberKPIComponent
-  ],
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        TeamKPIComponent,
+        MemberKPIComponent,
+        FilterPipe,
+        FilterPipe,
+        MemberKpiListComponent
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,

@@ -3,6 +3,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "./login/login.component";
 import {TeamKPIComponent} from "./manager/team-kpi/team-kpi.component";
 import {MemberKPIComponent} from "./manager/member-kpi/member-kpi.component";
+import {MemberKpiListComponent} from "./manager/member-kpi/member-kpi-list.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirects to the login page by default
@@ -16,7 +17,7 @@ const routes: Routes = [
       },
       {
         path: 'members',
-        component: MemberKPIComponent
+        component: MemberKpiListComponent
       }
     ]
   }

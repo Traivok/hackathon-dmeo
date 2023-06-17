@@ -1,1 +1,47 @@
-<p>member-kpi works!</p>
+<mat-card class="mat-elevation-z24">
+    <mat-card-header>
+        <div mat-card-avatar>
+            <mat-icon>person</mat-icon>
+        </div>
+        <mat-card-title>{{ collaborator.name }}</mat-card-title>
+        <mat-card-subtitle>{{ collaborator.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <div class=flex-container *ngIf="collaborator.kpi; else noKpi">
+            <section class="info">
+                <table>
+                    <tr>
+                        <td>Experiência</td>
+                        <td>{{ collaborator.kpi.experienceInYr }} anos.</td>
+                    </tr>
+                    <tr>
+                        <td>Nota na avaliação</td>
+                        <td  [ngClass]="{ 'low-grade': collaborator.kpi.testGrade < teamKpi.avgGrade }">{{ collaborator.kpi.testGrade }}</td>
+                    </tr>
+                </table>
+
+                <ng-container *ngIf="collaborator.kpi?.courses && collaborator.kpi.courses.length > 0">
+                    <h3>Cursos Concluídos:</h3>
+                    <ul *ngIf="collaborator.kpi.courses | filter: { done: true } as completedCourses">
+                        <li *ngFor="let course of completedCourses">
+                            {{ course.title }} - {{ course.teacher }} (completo
+                            em {{ course.completedAt | date: 'mediumDate' }})
+                        </li>
+                        <li *ngIf="completedCourses.length === 0">Nenhum curso concluído.</li>
+                    </ul>
+                </ng-container>
+            </section>
+            <section class="kpi">
+                <canvas baseChart
+                        [datasets]="radarChartDatasets"
+                        [options]="radarChartOptions"
+                        [labels]="radarChartLabels"
+                        [type]="'radar'">
+                </canvas>
+            </section>
+        </div>
+        <ng-template #noKpi>
+            <p>Avaliação indisponível para o Colaborador.</p>
+        </ng-template>
+    </mat-card-content>
+</mat-card>
