@@ -1,0 +1,35 @@
+<section class="container">
+    <mat-card class="collaborator-info mat-elevation-z24">
+        <mat-card-header>
+            <div mat-card-avatar>
+                <mat-icon>person</mat-icon>
+            </div>
+            <mat-card-title>
+                <h1>{{service.user.name}}</h1>
+            </mat-card-title>
+            <mat-card-subtitle>{{service.user.email}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="flex-container">
+            <div class="info">
+                <table>
+                    <tr>
+                        <td><strong>Sua nota:</strong></td>
+                        <td><span>{{grade * 100 | number: '1.1-1'}}</span>
+                            <br>
+                            <span>🥳
+                           <i *ngIf="grade * 100 > kpi.avgGrade">parabéns, você obteve uma nota melhor que a média.</i></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Seu gestor:</strong></td>
+                        <td>{{ service.company.manager.name }}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>E-mail do Gestor:</strong></td>
+                        <td>{{ service.company.manager.email }}</td>
+                    </tr>
+                </table>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</section>

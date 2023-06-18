@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatRadioModule} from "@angular/material/radio";
 import {MatInputModule} from "@angular/material/input";
@@ -19,6 +19,11 @@ import {NgChartsModule} from "ng2-charts";
 import {MatIconModule} from "@angular/material/icon";
 import { FilterPipe } from './filter.pipe';
 import { MemberKpiListComponent } from './manager/member-kpi/member-kpi-list.component';
+import { QuizzComponent } from './collaborator/quizz/quizz.component';
+import { CoursesComponent } from './collaborator/courses/courses.component';
+import { CoursesListComponent } from './collaborator/courses-list/courses-list.component';
+import {MatStepperModule} from "@angular/material/stepper";
+import { GeneralComponent } from './collaborator/general/general.component';
 
 @NgModule({
     declarations: [
@@ -28,7 +33,11 @@ import { MemberKpiListComponent } from './manager/member-kpi/member-kpi-list.com
         MemberKPIComponent,
         FilterPipe,
         FilterPipe,
-        MemberKpiListComponent
+        MemberKpiListComponent,
+        QuizzComponent,
+        CoursesComponent,
+        CoursesListComponent,
+        GeneralComponent,
     ],
     imports: [
         BrowserModule,
@@ -43,7 +52,9 @@ import { MemberKpiListComponent } from './manager/member-kpi/member-kpi-list.com
         MatCardModule,
         MatListModule,
         NgChartsModule,
-        MatIconModule
+        MatIconModule,
+        MatStepperModule,
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

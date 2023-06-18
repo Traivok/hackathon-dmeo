@@ -1,0 +1,37 @@
+<section class="container">
+    <mat-card class="mat-elevation-z24">
+        <mat-card-header>
+            <div mat-card-avatar>
+                <mat-icon>study</mat-icon>
+            </div>
+            <mat-card-title>
+                <h1>{{course.title}}</h1>
+            </mat-card-title>
+            <mat-card-subtitle><h4>{{course.subject}}</h4></mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+
+        <mat-card-content class="flex-container">
+            <div class="info">
+                <table>
+                    <tr>
+                        <td>Professor</td>
+                        <td>{{course.teacher}}</td>
+                    </tr>
+                    <tr>
+                        <td>Duração</td>
+                        <td>{{ course.durationInHours }} horas</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assuntos Abordados:</strong></td>
+                        <td>
+                            <ul>
+                                <li *ngFor="let topic of course.topicsCovered">{{ topic }}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</section>

@@ -1,0 +1,19 @@
+<mat-stepper orientation="vertical">
+    <mat-step *ngFor="let question of questions; let i = index">
+        <ng-template matStepLabel>{{ question.question }}</ng-template>
+        <mat-radio-group class="options" [(ngModel)]="answers[i]">
+            <mat-radio-button *ngFor="let answer of question.answers; let j = index" [value]="j">
+                {{ answer }}
+            </mat-radio-button>
+        </mat-radio-group>
+    </mat-step>
+
+    <mat-step>
+        <ng-template matStepLabel>Fim!</ng-template>
+        <h4>Fim do questionário, boa sorte!</h4>
+        <button mat-flat-button [color]="hasUnansweredQuestions() ? 'warn' : 'primary'" (click)="submit()">
+            Enviar
+        </button>
+        <mat-error *ngIf="hasUnansweredQuestions()">Há questões não respondidas.</mat-error>
+    </mat-step>
+</mat-stepper>

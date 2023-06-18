@@ -17,3 +17,19 @@ mat-toolbar {
 .header-gap {
   height: 5px;
 }
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.header-gap {
+  height: 64px; /* Adjust the height based on your header's height */
+}
+
+main {
+  margin-top: 64px; /* Adjust the margin-top value to match your header's height */
+}

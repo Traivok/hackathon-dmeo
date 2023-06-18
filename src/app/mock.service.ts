@@ -5,6 +5,8 @@ export interface Course {
     teacher: string;
     title: string;
     subject: string;
+    durationInHours: number;
+    topicsCovered: Array<string>;
 }
 
 export interface KPI {
@@ -87,21 +89,27 @@ export class MockService {
         return [
             {
                 id: 1,
-                teacher: 'Professora Silva',
+                teacher: 'Silva',
                 title: 'Introdução à Indústria Têxtil',
-                subject: 'Tecnologia Têxtil'
+                subject: 'Tecnologia Têxtil',
+                durationInHours: 12,
+                topicsCovered: ['História da indústria têxtil', 'Materiais têxteis', 'Processos de fabricação'],
             },
             {
                 id: 2,
-                teacher: 'Professor Oliveira',
+                teacher: 'Oliveira',
                 title: 'Design de Moda',
-                subject: 'Moda'
+                subject: 'Moda',
+                durationInHours: 8,
+                topicsCovered: ['Princípios de design', 'Tendências da moda', 'Criação de coleções'],
             },
             {
                 id: 3,
-                teacher: 'Professora Souza',
+                teacher: 'Souza',
                 title: 'Processos de Tingimento',
-                subject: 'Tingimento Têxtil'
+                subject: 'Tingimento Têxtil',
+                durationInHours: 4,
+                topicsCovered: ['Tipos de corantes', 'Técnicas de tingimento', 'Cuidados com o tingimento'],
             }
         ];
     }
@@ -124,26 +132,34 @@ export class MockService {
                         courses: [
                             {
                                 id: 1,
-                                teacher: 'Professora Silva',
+                                teacher: 'Silva',
                                 title: 'Introdução à Indústria Têxtil',
                                 subject: 'Tecnologia Têxtil',
+                                durationInHours: 12,
+                                topicsCovered: ['História da indústria têxtil', 'Materiais têxteis', 'Processos de fabricação'],
                                 done: true,
                                 completedAt: new Date()
                             },
                             {
                                 id: 2,
-                                teacher: 'Professor Oliveira',
+                                teacher: 'Oliveira',
                                 title: 'Design de Moda',
                                 subject: 'Moda',
-                                done: false
+                                done: false,
+                                durationInHours: 8,
+                                topicsCovered: ['Princípios de design', 'Tendências da moda', 'Criação de coleções'],
+
                             },
                             {
                                 id: 3,
-                                teacher: 'Professora Souza',
+                                teacher: 'Souza',
                                 title: 'Processos de Tingimento',
                                 subject: 'Tingimento Têxtil',
                                 done: true,
-                                completedAt: new Date()
+                                completedAt: new Date(),
+                                durationInHours: 4,
+                                topicsCovered: ['Tipos de corantes', 'Técnicas de tingimento', 'Cuidados com o tingimento'],
+
                             }
                         ]
                     }
@@ -159,27 +175,34 @@ export class MockService {
                         courses: [
                             {
                                 id: 1,
-                                teacher: 'Professora Silva',
+                                teacher: 'Silva',
                                 title: 'Introdução à Indústria Têxtil',
                                 subject: 'Tecnologia Têxtil',
+                                durationInHours: 12,
+                                topicsCovered: ['História da indústria têxtil', 'Materiais têxteis', 'Processos de fabricação'],
+
                                 done: true,
                                 completedAt: new Date()
                             },
                             {
                                 id: 2,
-                                teacher: 'Professor Oliveira',
+                                teacher: 'Oliveira',
                                 title: 'Design de Moda',
                                 subject: 'Moda',
                                 done: true,
-                                completedAt: new Date()
+                                completedAt: new Date(),
+                                durationInHours: 8,
+                                topicsCovered: ['Princípios de design', 'Tendências da moda', 'Criação de coleções'],
                             },
                             {
                                 id: 3,
-                                teacher: 'Professora Souza',
+                                teacher: 'Souza',
                                 title: 'Processos de Tingimento',
                                 subject: 'Tingimento Têxtil',
                                 done: true,
-                                completedAt: new Date()
+                                completedAt: new Date(),
+                                durationInHours: 4,
+                                topicsCovered: ['Tipos de corantes', 'Técnicas de tingimento', 'Cuidados com o tingimento'],
                             }
                         ]
                     }
@@ -195,24 +218,31 @@ export class MockService {
                         courses: [
                             {
                                 id: 1,
-                                teacher: 'Professora Silva',
+                                teacher: 'Silva',
                                 title: 'Introdução à Indústria Têxtil',
                                 subject: 'Tecnologia Têxtil',
+                                durationInHours: 12,
+                                topicsCovered: ['História da indústria têxtil', 'Materiais têxteis', 'Processos de fabricação'],
+
                                 done: false,
                             },
                             {
                                 id: 2,
-                                teacher: 'Professor Oliveira',
+                                teacher: 'Oliveira',
                                 title: 'Design de Moda',
                                 subject: 'Moda',
                                 done: false,
+                                durationInHours: 8,
+                                topicsCovered: ['Princípios de design', 'Tendências da moda', 'Criação de coleções'],
                             },
                             {
                                 id: 3,
-                                teacher: 'Professora Souza',
+                                teacher: 'Souza',
                                 title: 'Processos de Tingimento',
                                 subject: 'Tingimento Têxtil',
-                                done: false
+                                done: false,
+                                durationInHours: 4,
+                                topicsCovered: ['Tipos de corantes', 'Técnicas de tingimento', 'Cuidados com o tingimento'],
                             }
                         ]
                     }
