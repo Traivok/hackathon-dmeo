@@ -6,7 +6,9 @@ import {MockService} from "../../mock.service";
   template: `
       <main class="container">
           <app-general class="item"></app-general>
-          <app-courses class="item" [course]="c" *ngFor="let c of service.courses"></app-courses>
+          <app-courses class="item" [course]="c" 
+                       [first]="first"
+                       *ngFor="let c of service.courses; let first = first"></app-courses>
       </main>
 
   `,

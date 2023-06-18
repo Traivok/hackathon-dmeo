@@ -24,6 +24,8 @@ import { CoursesComponent } from './collaborator/courses/courses.component';
 import { CoursesListComponent } from './collaborator/courses-list/courses-list.component';
 import {MatStepperModule} from "@angular/material/stepper";
 import { GeneralComponent } from './collaborator/general/general.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { CertificateComponent } from './certificate/certificate.component';
 
 @NgModule({
     declarations: [
@@ -38,6 +40,7 @@ import { GeneralComponent } from './collaborator/general/general.component';
         CoursesComponent,
         CoursesListComponent,
         GeneralComponent,
+        CertificateComponent,
     ],
     imports: [
         BrowserModule,
@@ -54,7 +57,8 @@ import { GeneralComponent } from './collaborator/general/general.component';
         NgChartsModule,
         MatIconModule,
         MatStepperModule,
-        FormsModule
+        FormsModule,
+        MatProgressBarModule
     ],
   providers: [],
   bootstrap: [AppComponent]

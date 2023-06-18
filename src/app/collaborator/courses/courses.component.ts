@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Course} from "../../mock.service";
 
 @Component({
@@ -6,7 +6,15 @@ import {Course} from "../../mock.service";
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.scss']
 })
-export class CoursesComponent {
+export class CoursesComponent implements OnInit {
   @Input() course!: Course;
+  @Input() first!: boolean;
+  progress: number = 0;
+
+
+
+  ngOnInit(): void {
+    this.progress = this.first ? 100 : Math.random() * 100;
+  }
 
 }

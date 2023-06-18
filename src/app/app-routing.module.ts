@@ -7,6 +7,7 @@ import {MemberKpiListComponent} from "./manager/member-kpi/member-kpi-list.compo
 import {CoursesListComponent} from "./collaborator/courses-list/courses-list.component";
 import {QuizzComponent} from "./collaborator/quizz/quizz.component";
 import {quizzGuard} from "./collaborator/quizz-result.guard";
+import {CertificateComponent} from "./certificate/certificate.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirects to the login page by default
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'quizz',
     component: QuizzComponent
+  },
+  {
+    path: 'certificate/:id',
+    component: CertificateComponent
   }
 ];
 

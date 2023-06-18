@@ -1,0 +1,16 @@
+<div class="certificate-container">
+    <h1>Certificado</h1>
+
+    <div>
+        <h2>Curso Concluído:</h2>
+        <p>Professor: {{ course.teacher }}</p>
+        <p>Título: {{ course.title }}</p>
+        <p>Assunto: {{ course.subject }}</p>
+        <p>Duração: {{ course.durationInHours }} horas</p>
+    </div>
+
+    <div>
+        <h3>Tópicos Abordados:</h3>
+        <p *ngFor="let topic of course.topicsCovered">{{ topic }}</p>
+    </div>
+</div>
